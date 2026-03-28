@@ -3,10 +3,11 @@ from __future__ import annotations
 import csv
 import json
 import shutil
+import tempfile
 import uuid
 from pathlib import Path
 
-from backend.app.config import RESULTS_DIR, UPLOAD_DIR, settings
+from backend.app.config import settings
 from backend.app.models import CleanupArtifacts, CleanupMetrics
 from backend.app.services.cleanup_service import process_csv
 from backend.app.services.daytona_remote_worker import REMOTE_WORKER_SCRIPT
@@ -29,8 +30,9 @@ class DaytonaExecutor:
 
     def execute_cleanup(self, source_file: Path) -> CleanupArtifacts:
         job_id = uuid.uuid4().hex[:10]
-        job_upload_dir = UPLOAD_DIR / job_id
-        job_result_dir = RESULTS_DIR / job_id
+        job_root_dir = Path(tempfile.mkdtemp(prefix=f"cleanslate-{job_id}-"))
+        job_upload_dir = job_root_dir / "input"
+        job_result_dir = job_root_dir / "output"
         job_upload_dir.mkdir(parents=True, exist_ok=True)
         job_result_dir.mkdir(parents=True, exist_ok=True)
 

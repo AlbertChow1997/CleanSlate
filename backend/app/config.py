@@ -2,18 +2,11 @@ from __future__ import annotations
 
 import os
 from pathlib import Path
-
-
 BASE_DIR = Path(__file__).resolve().parents[2]
 APP_DIR = Path(__file__).resolve().parent
-UPLOAD_DIR = BASE_DIR / "backend" / "uploads"
-RESULTS_DIR = BASE_DIR / "backend" / "results"
 STATIC_DIR = APP_DIR / "static"
 TEMPLATES_DIR = APP_DIR / "templates"
 FRONTEND_DIR = BASE_DIR / "frontend"
-
-UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
-RESULTS_DIR.mkdir(parents=True, exist_ok=True)
 
 
 class Settings:

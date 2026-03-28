@@ -14,6 +14,7 @@ const downloadCsvLink = document.getElementById("downloadCsvLink");
 const reportLink = document.getElementById("reportLink");
 const reportJsonLink = document.getElementById("reportJsonLink");
 const executionModeBlurb = document.getElementById("executionModeBlurb");
+let downloadUrls = [];
 
 csvFile.addEventListener("change", () => {
   updateSelectedFileState(csvFile.files[0] || null);
@@ -157,9 +158,25 @@ function renderResults(payload) {
 
   renderPreview(preview);
 
-  downloadCsvLink.href = payload.cleaned_csv_url;
-  reportLink.href = payload.report_html_url;
-  reportJsonLink.href = payload.report_json_url;
+  resetDownloadUrls();
+  applyDownloadLink(
+    downloadCsvLink,
+    payload.cleaned_csv_content,
+    "text/csv;charset=utf-8",
+    payload.cleaned_csv_filename,
+  );
+  applyDownloadLink(
+    reportLink,
+    payload.report_html_content,
+    "text/html;charset=utf-8",
+    payload.report_html_filename,
+  );
+  applyDownloadLink(
+    reportJsonLink,
+    payload.report_json_content,
+    "application/json;charset=utf-8",
+    payload.report_json_filename,
+  );
 }
 
 function renderPreview(rows) {
@@ -191,4 +208,17 @@ function renderPreview(rows) {
     tbody.appendChild(tr);
   });
   previewTable.appendChild(tbody);
+}
+
+function applyDownloadLink(link, content, mimeType, filename) {
+  const blob = new Blob([content], { type: mimeType });
+  const url = URL.createObjectURL(blob);
+  downloadUrls.push(url);
+  link.href = url;
+  link.download = filename;
+}
+
+function resetDownloadUrls() {
+  downloadUrls.forEach((url) => URL.revokeObjectURL(url));
+  downloadUrls = [];
 }
