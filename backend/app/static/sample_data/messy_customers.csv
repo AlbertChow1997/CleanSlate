@@ -1,0 +1,9 @@
+name,email,phone,country,signup_date,status,order_total
+ john doe ,JOHN@EXAMPLE.COM ,(555) 123-4567,USA,03/01/24,active ,1250.50
+Jane smith, jane.smith@example.com,5551234567,U.S.A.,2024-03-04,Pending,840.00
+John Doe,john@example.com,+1 555 123 4567,United States,March 1 2024,active,1250.50
+marco bell,marco.bell@example.com ,555.222.1111,uk,2024/04/08,in progress,420.10
+Sasha Lee,SASHA.LEE@Example.com,,United States of America,04-09-2024,In-Progress,990.99
+Priya Patel,priya.patel@example.com,1-555-777-9999,U.K.,2024-04-11,Active,780.40
+Priya Patel,priya.patel@example.com,1-555-777-9999,U.K.,2024-04-11,Active,780.40
+omar ibrahim, omar@example.com ,555 100 2000,us,2024-05-01,pending,660.00

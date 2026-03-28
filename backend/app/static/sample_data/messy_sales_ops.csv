@@ -1,0 +1,15 @@
+customer_name,email,phone,country,signup_date,status,order_total,city,company
+ alice ng , ALICE.NG@EXAMPLE.COM,555-010-2222,usa,01/15/24,active ,1499.99,new york, northwind labs
+Bob Martin,bob.martin@example.com,(555) 010-3333,U.S.A.,2024-01-16,Pending,220.00,Austin,Northwind Labs
+Alice Ng,alice.ng@example.com,+1 555 010 2222,United States,January 15 2024,active,1499.99,New York,Northwind Labs
+carla gomez, carla.gomez@example.com ,555.010.4444,uk,2024/02/01,in progress,880.40,london,blue harbor
+David Chen,DAVID.CHEN@example.com,1-555-010-5555,U.K.,02-03-2024,In-Progress,125.75,manchester,Blue Harbor
+Emily Stone,emily.stone@example.com,,United States of America,2024-02-07,Active,3400.00, san francisco ,Summit Works
+Farah Khan,farah.khan@example.com,555 010 7777,us,2024-02-08,pending,0.00,chicago,summit works
+George Li, george.li@example.com ,5550108888,USA,2024-02-09,active,92.40,seattle,Peak Retail
+Helen Park,helen.park@example,555-010-9999,United States,03/11/24,active,510.10,Seattle,Peak Retail
+ian wright,ian.wright@example.com,555-010-1111,uk,2024-03-12,Pending,780.60,bristol,Acorn Group
+Ian Wright,ian.wright@example.com,+1 555 010 1111,U.K.,March 12 2024,pending,780.60,Bristol,Acorn Group
+Julia Moss,julia.moss@example.com,5550101212,us,2024-03-13,active,640.00,,Oak Circle
+Kevin Hart,kevin.hart@example.com,555-010-1313,U.S.A.,2024-03-14, closed won ,970.00,Denver, Oak Circle
+Lina Patel,lina.patel@example.com,555 010 1414,United States,2024-03-15,Closed Won,970.00,denver,Oak Circle

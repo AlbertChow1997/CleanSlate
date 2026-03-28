@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CleanSlate</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Hackathon Demo</p>
+          <h1>Clean messy business CSVs in a secure Daytona workflow.</h1>
+          <p class="hero-text">
+            Upload customer, sales, or operations exports and get a cleaned CSV, an audit report,
+            and before/after metrics in minutes.
+          </p>
+          <div class="hero-pills">
+            <span>Duplicate removal</span>
+            <span>Date normalization</span>
+            <span>Phone cleanup</span>
+            <span>Downloadable report</span>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="metric">
+            <span class="metric-label">Use case</span>
+            <strong>Small-business data ops</strong>
+          </div>
+          <div class="metric">
+            <span class="metric-label">Execution</span>
+            <strong id="executionModeBlurb">Daytona-ready with local fallback</strong>
+          </div>
+          <div class="metric">
+            <span class="metric-label">Output</span>
+            <strong>Cleaned CSV + report</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel upload-panel">
+        <div class="panel-head">
+          <h2>Upload a CSV</h2>
+          <button id="sampleButton" class="ghost-button" type="button">Use sample file</button>
+        </div>
+        <form id="uploadForm">
+          <input id="csvFile" name="file" type="file" accept=".csv" required />
+          <label id="dropzone" class="dropzone" for="csvFile">
+            <span class="dropzone-title">Choose a CSV file</span>
+            <span id="dropzoneSubtitle" class="dropzone-subtitle">Customer exports, CRM dumps, order sheets, and more</span>
+          </label>
+          <button id="submitButton" class="primary-button" type="submit">Clean My Data</button>
+        </form>
+        <p id="statusText" class="status-text">Waiting for file upload.</p>
+      </section>
+
+      <section id="resultsSection" class="panel results-panel hidden">
+        <div class="panel-head">
+          <h2>Cleanup Results</h2>
+          <div class="link-row">
+            <a id="downloadCsvLink" class="inline-link" href="#" target="_blank" rel="noreferrer">Download cleaned CSV</a>
+            <a id="reportLink" class="inline-link" href="#" target="_blank" rel="noreferrer">Open HTML report</a>
+            <a id="reportJsonLink" class="inline-link" href="#" target="_blank" rel="noreferrer">Open JSON report</a>
+          </div>
+        </div>
+        <div id="metricsGrid" class="metrics-grid"></div>
+        <div class="results-grid">
+          <div class="subpanel">
+            <h3>Audit Notes</h3>
+            <ul id="notesList"></ul>
+          </div>
+          <div class="subpanel">
+            <h3>Missing Values</h3>
+            <ul id="missingList"></ul>
+          </div>
+        </div>
+        <div class="subpanel table-panel">
+          <h3>Preview</h3>
+          <div class="table-wrap">
+            <table id="previewTable"></table>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+  </html>
